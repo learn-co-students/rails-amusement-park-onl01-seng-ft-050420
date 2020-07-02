@@ -1,1 +1,17 @@
-<%= link_to '<button type="button">Go on this ride</button>'.html_safe, user_path(current_user) %>
+<ul>
+  <li>Name: <%= @attraction.name %></li>
+  <li>Tickets: <%= @attraction.tickets %></li>
+  <li>Nausea rating: <%= @attraction.nausea_rating %></li>
+  <li>Happiness rating: <%= @attraction.happiness_rating %></li>
+  <li>Minimum height: <%= @attraction.min_height %></li>
+</ul>
+
+<% if !!current_user.admin %>
+  <%= link_to 'Edit Attraction', edit_attraction_path(@attraction) %>
+<% else %>
+  <%= form_for @ride do |f| %>
+    <%= f.hidden_field :user_id %>
+    <%= f.hidden_field :attraction_id %>
+    <%= f.submit "Go on this ride" %>
+  <% end %>
+<% end %>
