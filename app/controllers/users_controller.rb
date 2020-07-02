@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    # raise params.inspect
     if @user = User.create(user_params)
       session[:user_id] = @user.id
       redirect_to user_path(@user)
@@ -14,6 +15,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    # byebug
     if !logged_in?
       redirect_to root_path
     end

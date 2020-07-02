@@ -12,6 +12,6 @@
   <%= f.label :height %> <br>
   <%= f.number_field :height, step: 1 %> <br>
   <%= f.label :admin %> <br>
-  <%= f.check_box :admin %> <br>
+  <%= f.check_box :admin, {}, 'true', 'false' %> <br>
   <%= f.submit %>
 <% end %>
