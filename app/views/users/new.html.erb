@@ -1,0 +1,11 @@
+<%= form_for @user do |f| %>
+    <%= f.text_field :name %>
+    <%= f.number_field :nausea %>
+    <%= f.number_field :happiness %>
+    <%= f.number_field :tickets %>
+    <%= f.number_field :height %>
+    <%= f.password_field :password %>
+    <%= f.check_box :admin, class: "form-check-input" %>
+
+    <%= f.submit %>
+<% end %>
