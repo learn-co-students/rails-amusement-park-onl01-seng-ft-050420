@@ -1,0 +1,24 @@
+<%= form_for @user do |f| %>
+  <%= f.label :name %> <br>
+  <%= f.text_field :name %> <br>
+
+  <%= f.label :password %> <br>
+  <%= f.password_field :password %> <br>
+
+  <%= f.label :nausea %> <br>
+  <%= f.number_field :nausea, in: 1..5, step: 1 %> <br>
+
+  <%= f.label :happiness %> <br>
+  <%= f.number_field :happiness, in: 1..5, step: 1 %> <br>
+
+  <%= f.label :tickets %> <br>
+  <%= f.number_field :tickets, step: 1 %> <br>
+
+  <%= f.label :height %> <br>
+  <%= f.number_field :height, step: 1 %> <br>
+
+  <%= f.label :admin %> <br>
+  <%= f.check_box :admin, {}, 'true', 'false' %> <br>
+  
+  <%= f.submit %>
+<% end %>
