@@ -21,13 +21,26 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            
+            <% if logged_in? %>
+              <li><%= link_to "#{current_user.name.capitalize}'s Profile", user_path(current_user) %></li>
+              <li><%= link_to "Attractions", attractions_path %></li>
+              <li><%= link_to "Log Out", logout_path, method: :delete %></li>
+            <% elsif  %>
+              <li><%= link_to "Sign Up", new_user_path %></li>
+              <li><%= link_to "Log In", signin_path %></li>
+            <% end %>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
 
     <!-- content -->
+    <% if !!flash[:message] %>
+      <div>
+        <p><%= flash[:message] %></p>
+      </div>
+    <% end %>
+
     <div class="container"  role="main">
       <%= yield %>
     </div>
