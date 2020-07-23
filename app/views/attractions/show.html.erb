@@ -1,0 +1,12 @@
+<h1>Attraction Show page!</h1>
+  Name: <%= @attraction.name %><br>
+  Tickets required: <%= @attraction.tickets %><br>
+  Nausea rating: <%= @attraction.nausea_rating %><br>
+  Happiness rating: <%= @attraction.happiness_rating %><br>
+  Minimum height: <%= @attraction.min_height %><br>
+
+<%= form_for @ride do |f| %>
+  <%= f.hidden_field :user_id %>
+  <%= f.hidden_field :attraction_id %>
+  <%= f.submit "Go on this ride" %>
+<% end %>

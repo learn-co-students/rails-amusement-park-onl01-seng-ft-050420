@@ -32,7 +32,12 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
-
+    <% if flash[:notice] %> <!-- Same as Sinatra -->
+    <div>
+      <%= flash[:notice] %>
+    </div>
+      <% flash.clear %>
+    <% end %>
     <!-- content -->
     <div class="container"  role="main">
       <%= yield %>
