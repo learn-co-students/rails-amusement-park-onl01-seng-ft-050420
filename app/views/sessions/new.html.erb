@@ -1,0 +1,7 @@
+<%= form_for(@user, url: '/signin', method: :post) do |f| %>
+  <%= f.label :name, "Your name:" %><br>
+  <%= f.collection_select :name, User.all, :name, :name %><br>
+  <%= f.label :password, "Your password:" %><br>
+  <%= f.password_field :password, id: "password" %><br>
+  <%= f.submit "Sign In" %>
+<% end %>

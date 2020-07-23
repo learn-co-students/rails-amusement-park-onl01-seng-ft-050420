@@ -1,0 +1,14 @@
+<h1>Attractions Index!</h1>
+<ul>
+  <% @attractions.each do |attraction| %>
+    <% if current_user.admin %>
+      <li><%= link_to "Show #{attraction.name}", attraction_path(attraction) %></li>
+    <% else %>
+      <li><%= link_to "Go on #{attraction.name}", attraction_path(attraction) %></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<% if current_user.admin %>
+  ADMINS ONLY: <%= link_to 'New Attraction', new_attraction_path, class: "btn-primary" %>
+<% end %>
