@@ -1,0 +1,15 @@
+<%= form_tag('/users', method: 'post') do %>
+<label>User Name:</label>
+<%= select_tag "user[name]", options_from_collection_for_select(User.all, "name", "name")%>
+<label>Password:</label>
+<%= password_field_tag 'password' %>
+<%= submit_tag 'Sign In' %>
+<% end %>
+
+<%= form_for @user, url: {action: "create" } do |f|%>
+<%= f.label :name %>
+<%= f.collection_select(:name, User.all, :id, :name)%>
+<%= f.label :password %>
+<%= f.text_field :password %>
+<%= f.submit 'Sign In'%>
+<% end %>

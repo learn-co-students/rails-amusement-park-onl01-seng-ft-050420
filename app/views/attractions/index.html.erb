@@ -1,0 +1,10 @@
+<%= @attractions.each do |attraction| %>
+<%= attraction.name %>
+<%= attraction.happiness_rating %>
+<%= attraction.nausea_rating %>
+<%= attraction.min_height %>
+<%= attraction.tickets %>
+<%= admin_show_attraction(attraction) %>
+<% end %>
+
+<%= admin_add_attraction(current_user) %>

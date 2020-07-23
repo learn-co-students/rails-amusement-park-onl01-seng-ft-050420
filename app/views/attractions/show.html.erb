@@ -1,0 +1,14 @@
+
+Name: <%= @attraction.name %><br><br>
+Happiness Rating: <%= @attraction.happiness_rating %><br>
+Nausea Rating: <%= @attraction.nausea_rating %><br>
+Minimum Height: <%= @attraction.min_height %><br>
+Tickets: <%= @attraction.tickets %><br>
+
+<%= form_for @attraction, url: '/take_ride', method: :post do |f| %>
+<%=  f.hidden_field :id %>
+<%=  f.submit "Go on this ride" %>
+<% end %>
+
+<%= admin_edit_attraction(@attraction) %>
+

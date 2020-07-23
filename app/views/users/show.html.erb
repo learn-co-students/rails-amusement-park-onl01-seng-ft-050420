@@ -1,0 +1,15 @@
+<%= link_to 'Log Out', signout_path %>
+
+
+<%= admin_display(@user) %>
+<%= flash[:message] %>
+
+<p>Hello, <%= @user.name %></p>
+<p>Name: <%= @user.name %></p>
+<p>Mood: <%= @user.mood %></p>
+<p>Nausea: <%= @user.nausea %></p>
+<p>Happiness: <%= @user.happiness %></p>
+<p>Tickets: <%= @user.tickets %></p>
+<p>Height: <%= @user.height %></p>
+<%= link_to 'See attractions', attractions_path %>
+   
