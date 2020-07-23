@@ -1,0 +1,8 @@
+<%= link_to("New Attraction", new_attraction_path) if current_user.admin %>
+<% @attractions.each do |a| %>
+    <%= current_user.admin ? link_to("Show #{a.name}", attraction_path(a)) : link_to("Go on #{a.name}", attraction_path(a)) %>
+    <%= a.happiness_rating %>
+    <%= a.nausea_rating %>
+    <%= a.min_height %>
+    <%= a.tickets %>
+<% end %>
