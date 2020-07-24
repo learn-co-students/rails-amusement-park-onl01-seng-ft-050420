@@ -1,0 +1,23 @@
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+<% if @ride %>
+  <% @ride.errors.full_messages.each do |msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
+<% end %>
+<div class="info">
+  <b>Name:</b> <%= @user.name %>
+  <% if @user.admin %>
+    <p>ADMIN</p>
+  <% else %>
+    <b>Tickets:</b> <%= @user.tickets %>
+    <b>Mood:</b> <%= @user.mood %>
+    <b>Height:</b> <%= @user.height %> Inches
+  <% end %>
+  <%= link_to "See attractions", attractions_path %>
+</div>
