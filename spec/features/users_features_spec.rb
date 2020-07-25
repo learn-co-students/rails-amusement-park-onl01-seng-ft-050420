@@ -198,6 +198,7 @@ describe 'Feature Test: Go on a Ride', :type => :feature do
 
   it "links from the attractions index page to the attractions' show pages" do
     click_link('See attractions')
+
     click_link("Go on #{@ferriswheel.name}")
     expect(current_path).to eq("/attractions/2")
   end

@@ -1,0 +1,20 @@
+<% if flash[:message] %>
+  <div class="center alert">
+    <p><%= flash[:message] %></p>
+  </div>
+<% end %>
+
+<h1><%= @user.name %></h1>
+
+<h2><%= "ADMIN" if @user.admin %></h2>
+
+<p>Height: <%= @user.height %></p>
+
+<p>Nausea: <%= @user.nausea %></p>
+
+<p>Happiness: <%= @user.happiness %></p>
+
+<p>Mood: <%= @user.mood %></p>
+
+<p>Tickets: <%= @user.tickets %></p>
+
