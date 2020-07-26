@@ -1,0 +1,10 @@
+<% form_for @user do |f| %>
+    <%= f.text_field :name %>
+    <%= f.number_field :height  %>
+    <%= f.range_field (:happiness, in: 1..5)  %>
+    <%= f.range_field (:nausea, in: 1..5)  %>
+    <%= f.number_field :tickets  %>
+    <%= f.check_box :admin %>
+    <%= f.text_field :password %>
+    <%= f.submit %>
+  <% end %>
