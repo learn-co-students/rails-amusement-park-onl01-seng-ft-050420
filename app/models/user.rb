@@ -1,17 +1,30 @@
 class User < ApplicationRecord
     has_many :rides
     has_many :attractions, through: :rides
-    #has_secure_password
+    has_secure_password
     #before_action :require_admin
-    def mood
-        if nausea_rating > happiness_rating
-            mood == sad
-        else mood == happy
-        end
-    end
+   # def mood #mood is an instance method, use self in this case
+       # if self.nausea > self.happiness
+            #@mood = "sad"  
+       #     return 'sad'  
+       # else
+            #@mood = "happy"
+       #     return 'happy'
+     #   end
+    #end
 
-    def require_admin
+    #if self.happiness > self.nausea
+      #  return 'happy'
+      #else
+      #  return 'sad'
+      #end
+   # end
+   def mood
+    unless admin
+        happiness > nausea ? 'happy' : 'sad'
     end
+    end 
 
+    
    
 end

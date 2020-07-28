@@ -1,0 +1,25 @@
+<h1> Create an Attraction </h1>
+<%= form_for @attraction do |f| %>
+    <%= f.label :name, "What is the attraction name?" %>
+    <br>
+    <%= f.text_field :name %>
+    <br><br>
+    <%= f.label :height, "How tall do they have to be?" %>
+    <br><br>
+    <%= f.number_field :min_height  %>
+    <br><br>
+    <%= f.label :nausea_rating, "How nauseous can this make them?" %>
+    <br><br>
+    <%= f.number_field :nausea_rating  %>
+    <br><br>
+    <%= f.label :happiness_rating, "How happy can this make them?" %>
+    <br><br>
+    <%= f.number_field :happiness_rating  %>
+    <br><br>
+    <%= f.label :tickets, "How many tickets do they need?" %>
+    <br><br>
+    <%= f.number_field :tickets  %>
+    <br><br>
+    <%= f.submit "Create Attraction"%>
+  <% end %>
+
