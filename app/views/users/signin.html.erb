@@ -1,0 +1,6 @@
+<%= form_for @user do |f| %>
+<h1> "Your name:" <%= f.collection_select :name, User.all, :id, :name%></h1>
+<h1> "Your password:"" <%= f.text_field :password %> </h1>
+
+<%= f.submit "Log in"%>
+<% end %>

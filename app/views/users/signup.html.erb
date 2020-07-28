@@ -1,0 +1,32 @@
+<h1> Make a new user </h1>
+<%= form_for @user do |f| %>
+    <%= f.label :name, "What is your name?" %>
+    <br>
+    <%= f.text_field :name %>
+    <br><br>
+    <%= f.label :height, "How tall?" %>
+    <br><br>
+    <%= f.number_field :height  %>
+    <br><br>
+    <%= f.label :happiness, "How happy on a scale of 1 to 5?" %>
+    <br><br>
+    <%= f.range_field :happiness, in: 1..5, step: 1 %>
+    <br><br>
+    <%= f.label :nausea, "How sick on a scale of 1 to 5?" %>
+    <br><br>
+    <%= f.range_field :nausea, in: 1..5, step: 1  %>
+    <br><br>
+    <%= f.label :tickets, "How many tickets?" %>
+    <br><br>
+    <%= f.number_field :tickets  %>
+    <br><br>
+    <%= f.label :admin, "Are you with the admin?" %>
+    <br><br>
+    <%= f.check_box :admin %>
+    <br><br>
+    <%= f.label :password, "Your password?" %>
+    <br><br>
+    <%= f.text_field :password %>
+    <br><br>
+    <%= f.submit "Create User"%>
+  <% end %>
